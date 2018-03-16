@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_padding"
+    tools:context=".EditorActivity">
+
+    <!-- name -->
+    <LinearLayout
+        android:id="@+id/container_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/name"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            style="@style/RelativeStyle">
+
+            <EditText
+                android:id="@+id/edit_product_name"
+                android:hint="@string/name_hint"
+                style="@style/EditorFieldStyle" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- num -->
+    <LinearLayout
+        android:id="@+id/container_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/num"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            style="@style/RelativeStyle">
+
+            <EditText
+                android:id="@+id/edit_product_num"
+                style="@style/EditorFieldStyle"
+                android:focusable="false"/>
+            <!-- Units for price  -->
+            <TextView
+                android:id="@+id/label_num_units"
+                android:text="@string/number_units_hint"
+                style="@style/EditorUnitsStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Buynum -->
+    <LinearLayout
+        android:id="@+id/container_numBuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/numBuy"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            style="@style/RelativeStyle">
+
+            <EditText
+                android:id="@+id/edit_product_numBuy"
+                style="@style/EditorFieldStyle"
+                android:focusable="false"/>
+            <!-- Units for price  -->
+            <Button
+                android:id="@+id/button_num_add"
+                android:text="@string/plus"
+                android:layout_toLeftOf="@id/edit_product_numBuy"
+                style="@style/EditorUnitsStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Salenum -->
+    <LinearLayout
+        android:id="@+id/container_numSale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/numSale"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            style="@style/RelativeStyle">
+
+            <EditText
+                android:id="@+id/edit_product_numSale"
+                style="@style/EditorFieldStyle"
+                android:focusable="false"/>
+            <!-- Units for price  -->
+            <Button
+                android:id="@+id/button_num_minus"
+                android:text="@string/plus"
+                style="@style/EditorUnitsStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- price -->
+    <LinearLayout
+        android:id="@+id/container_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/price"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            style="@style/RelativeStyle">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_product_price"
+                android:hint="@string/hint_price"
+                android:inputType="numberDecimal"
+                style="@style/EditorFieldStyle" />
+
+            <!-- Units for price  -->
+            <TextView
+                android:id="@+id/label_weight_units"
+                android:text="@string/units_hint"
+                style="@style/EditorUnitsStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- mail -->
+    <LinearLayout
+        android:id="@+id/container_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/mail"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            style="@style/RelativeStyle">
+
+            <EditText
+                android:id="@+id/edit_product_mail"
+                android:hint="@string/mail_hint"
+                style="@style/EditorFieldStyle" />
+            <Button
+                android:id="@+id/button_buy_more"
+                android:text="@string/buy_more"
+                style="@style/EditorUnitsStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
