@@ -36,6 +36,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     private static final int EDIT_LOADER = 0;
     private Uri mCurrentUri;
     private Context context1 = this;
+    private Double price;
     //修改标志位
     private boolean mHasChanged = false;
     //修改监听器
@@ -188,7 +189,12 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             Toast.makeText(this, R.string.element_not_null, Toast.LENGTH_SHORT).show();
             return false;
         }
-        Double price = Double.parseDouble(mPriceEditText.getText().toString().trim());
+        try {
+            price = Double.parseDouble(mPriceEditText.getText().toString().trim());
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            return false;
+        }
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(InventoryEntry.COLUMN_PRODUCT_NAME, nameString);

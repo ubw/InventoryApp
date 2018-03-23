@@ -62,7 +62,7 @@ public class InventoryCursorAdapter extends CursorAdapter {
 
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(InventoryEntry.COLUMN_PRODUCT_NUM, num1-1);
-                contentValues.put(InventoryEntry.COLUMN_PRODUCT_NUM_SALE, saleNum+1);
+                contentValues.put(InventoryEntry.COLUMN_PRODUCT_NUM_SALE, numSale+1);
 
                 mContext.getContentResolver().update(
                         ContentUris.withAppendedId(InventoryEntry.CONTENT_URI, id1),
