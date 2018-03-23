@@ -43,4 +43,6 @@
     <string name="mail_want_more">i want more about</string>
     <string name="num0">0</string>
     <string name="price0">0.00</string>
+    <string name="element_not_null">名字,邮箱,价格不能为空</string>
+    <string name="sale_out">卖出</string>
 </resources>

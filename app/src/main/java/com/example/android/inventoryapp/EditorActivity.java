@@ -175,18 +175,20 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         return true;
     }
 
-    private void saveProduct() {
+    private boolean saveProduct() {
         String nameString = mNameEditText.getText().toString().trim();
         Integer num = Integer.parseInt(mNumEditText.getText().toString().trim());
-        Double price = Double.parseDouble(mPriceEditText.getText().toString().trim());
         String mailString = mMailEditText.getText().toString().trim();
         Integer saleNum = Integer.parseInt(mSaleNumEditText.getText().toString().trim());
         Integer buyNum = Integer.parseInt(mBuyNumEditText.getText().toString().trim());
 
-        if (mCurrentUri == null &&
-                TextUtils.isEmpty(nameString)) {
-            return;
+        if (TextUtils.isEmpty(nameString) ||
+                TextUtils.isEmpty(mailString) ||
+                TextUtils.isEmpty(mPriceEditText.getText().toString().trim()) ) {
+            Toast.makeText(this, R.string.element_not_null, Toast.LENGTH_SHORT).show();
+            return false;
         }
+        Double price = Double.parseDouble(mPriceEditText.getText().toString().trim());
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(InventoryEntry.COLUMN_PRODUCT_NAME, nameString);
@@ -216,6 +218,8 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
                         Toast.LENGTH_SHORT).show();
             }
         }
+
+        return true;
     }
 
     //删除确认对话框
@@ -257,9 +261,11 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_save:
-                saveProduct();
-                //退出编辑
-                finish();
+
+                if(saveProduct()) {
+                    //退出编辑
+                    finish();
+                }
                 return true;
 
             case R.id.action_delete:
